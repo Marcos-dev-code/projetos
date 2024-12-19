@@ -3,191 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    
-/*--reset css-- código para resetar todas as configurações
-pré-definidas dos diferentes navegadores*/
-    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
-acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong,
-sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
-caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, footer,
-figcaption, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:62.5%;
-    font:inherit;
-    text-decoration: none;
-    vertical-align:baseline;
-}
-
-/*/////////////////////Início da seção header //////////////////////////*/
-
-    /*Conteiner do logo*/
-    .container-logo{        
-        
-        width: 98%;
-        display: flex; /*deixa a imagem e o texto do logo lado a lado. */
-        justify-content:space-around;
-        align-items:center;     /* Alinha os itens verticalmente */
-        height: auto;           /* Ajuste a altura de acordo com o conteúdo */
-        margin:auto;
-    }
-
-        /*imagem do logo*/
-        .img-logo{
-            width:20px;
-        }
-
-        /*texto do logo */
-        .text-logo{
-            margin:auto; /*como o bloco que contem a img e o texto do logo esta usando o space-between, o margin:auto serve para centralizar apenas o segundo bloco, deixando a imagem do texto ainda na estremidade esquerda enquanto o texto fica alinhado no centro.*/
-            
-            font-size:2.0rem; /*valor relativo a font-size no HTML*/                  
-        }
-        
-        /*container-navbar*/
-
-        .container-navbar{
-            
-            width:50%;
-            margin:auto;
-            
-        }
-
-        .container-navbar nav{
-            display:flex;
-            justify-content:flex-end;
-            margin-right:30px;
-            
-        }
-
-        .container-navbar nav ul{
-            display:flex; /*para alinhar os cada item da lista*/
-            
-
-        }
-
-        .container-navbar nav li{
-            font-size:1.3rem;
-            
-            margin: 10px 15px 10px 15px;
-            list-style-type:none;
-        }
-/*/////////////////////fim seção do header ///////////////////////////*/
-
-/*/////////////////////Início da seção Main //////////////////////////*/
-
-    /*container main*/
-    main{ 
-        width:97.75%;
-        height:700px;
-        margin:auto;
-        border: 1px solid black;
-    }
-
-    h1{
-        font-size: 2.0rem;
-        margin:3.0rem 3.0rem 3.0rem 3.0rem;
-        text-align:center;
-    }
-
-    /*container que engloba o texto e a imagem da caixa de pesquisa.*/
-    .container-caixa-de-pesquisa{
-        display:flex;
-        justify-content: space-between; /*para deixar em posição oposta a caixa de pesquisa e a imagem da lupa*/
-        margin:auto;
-        border-radius: 18px;        
-        color:black;
-        border:0.5px solid gray;
-        width:50%;
-        height:40px;
-        
-    }
-
-    /*caixa de pesquisa isolada da imagem*/
-    .container-caixa-de-pesquisa input {
-        border:none;
-        background-color:transparent;
-        width:80%;
-        height:30px;
-        margin:5px 0px 5px 10px; 
-        text-align:center;
-        font-size:1.0rem;
-        outline: none;
-        opacity:0.8;
-
-      
-    }
-
-    /*pseudo-elemento (input:focus::placehouder) para esconder o texto quando clicado dentro da caixa*/
-    .container-caixa-de-pesquisa input:focus::placeholder{
-        opacity: 0; /*quando clicar na caixa, a opacidade das letras será 0 ou seja ficará invisível.*/
-    }
-
-    /*caixa da imagem isolada da caixa de texto*/
-    .container-caixa-de-pesquisa button {
-        width:30px;
-        height:30px;
-        border:none;
-        background-color: transparent;
-        margin:6px 20px 5px 0
-        
-        
-
-    }
-
-
-    /* icone da lupa dentro do button*/
-    .container-caixa-de-pesquisa img {
-        height:25px;
-        width:25px;
-        
-
-        
-    }
-
-    
-
-
-
-
-
-
-
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <div class="container-logo">
-            <div class="img-logo"><img src="img/sacola feliz.png" alt=""></div>
-            <div class="text-logo"><p>Oferta maneira</p></div>         
         
-            <div class="container-navbar">
-                <nav>
-                    <ul>
-                        <li>Home</li>
-                        <li>Artigos</li>
-                        <li>Sobre nós</li>
-                    </ul>
-                </nav>
-            </div>
+        <!--bloco da imagem do logo-->
+        <div class="container-logo">
+            <div class="img-logo"><img src="img/sacola feliz.png" alt="imagem do logo do site" loading="lazy" decoding="async"></div>
+            <div class="text-logo"><p>Oferta maneira</p></div>         
         </div>
+            
+        <!--barra de navegação-->
+        <div class="container-navbar">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Artigos</li>
+                    <li>Sobre nós</li>
+                </ul>
+            </nav>            
+        </div> 
+
     </header>
     <main>
+
+        <!--Titulo principal-->
         <h1>Encontre o produto desejado e confira todos os detalhes antes de comprar</h1>
-        <div class="container-caixa-de-pesquisa">
+
+        <!--sessão da caixa de pesquisa-->                
+        <div class="sessao-caixa-de-pesquisa">
             <input type="text" placeholder="Digite aqui o produto que deseja encontrar">
             <button type="submit">
-                <img src="img/icone de pesquisa.png" alt="lupa para iniciar pesquisa">
+                <img src="img/icone de pesquisa.png" alt="lupa para iniciar pesquisa" loading="lazy" decoding="async"> 
             </button>
         </div>
 
+        <h2>Produtos em destaque</h2>
+        
+        <!--sessão dos produtos em destaque-->
+        <div class="bloco-dos-produtos-em-destaque">
+            <div class="sub-bloco-contendo-as-caixas-123">
+                
+                <!--caixa 1-->
+                <div class="caixa-1">
+                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
+                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <!--caixa 2-->
+                <div class="caixa-2">
+                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
+                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
+                </div>
+                
+                <!--caixa 3-->
+                <div class="caixa-3">
+                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
+                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <h2>Está cansado de ver anúncios que não apresentam as informações básicas de que você precisa?</h2>
+        <p>Aqui, você encontra todas as informações sobre o produto para auxiliá-lo na sua decisão de compra. Descubra produtos selecionados dos maiores marketplaces, com garantia de qualidade e a confiança de vendedores Platinum, Prime e Parceiros Magalu.</p>
+
+        <!--sessão das imagens das empresas-->
+        <div class="bloco-das-imagens-do-ml-amazon-magalu">
+            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
+            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
+            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
+        </div>
+
+        <!--sessão de apresentação 1-->
+        <div class="bloco-geral-da-apresentaçao-1">
+
+            <!--bloco do lado esquerdo, contém o texto de apresentação 1-->
+            <div class="bloco-esquerdo-da-apresentaçao-1">
+                <h3 id="titulo-da-apresentaçao-1">Chega de dúvidas</h3>
+                <p id="texto-da-apresentação-1">Chega de produtos sem descrição e vendedores duvidosos! Clique agora e descubra uma nova experiência de compras confiável</p>
+                <a href="" class="botao-conferir-produtos">Conferir produtos</a>
+            </div>
+
+            <!--bloco do lado direito que contém a imagem da apresentação 1-->
+            <div class="bloco-direito-da-apresentação-1">
+                <img src="" alt="imagem de uma pessoa que está feliz" loading="lazy" decoding="async">
+            </div>
+        </div>
+    
+
+
+        
 
 
 
@@ -195,9 +104,7 @@ figcaption, header, hgroup, menu, nav, output, ruby, section, summary, time, mar
 
     </main>
     <script>
-        const elemento_teste=document.getElementsByClassName("text-logo");
-        console.log(elemento_teste)
-
+        
     </script>
 </body>
 </html>
