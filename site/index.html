@@ -1,110 +1,370 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>BC1 - Reviews de Produtos</title>
+    <style>
+        :root {
+            --bc1-primary-color: #F3F4F6;
+            --bc1-secondary-color: #FFD814;
+            --bc1-accent-color: #146EB4;
+            --bc1-text-color: #333333;
+            --bc1-button-color: #FF9900;
+            --bc2-carousel-bg: #ffffff;
+            --bc2-carousel-item-bg: #f9f9f9;
+            --bc2-carousel-shadow: rgba(0, 0, 0, 0.1);
+            --bc3-cor-principal: #fff;
+            --bc3-cor-texto: #333333;
+            --bc3-cor-acento: #146EB4;
+            --bc3-cor-fundo: #f9f9f9;
+            --bc3-cor-btn: #FFD814;
+            --bc3-cor-btn-hover: #e0a800;
+            --bc3-sombra: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bc1-primary-color);
+        }
+
+        .bc1-header {
+            background: var(--bc1-secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bc1-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--bc1-text-color);
+            text-decoration: none;
+        }
+
+        .bc1-nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .bc1-nav a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--bc1-text-color);
+            transition: color 0.3s;
+        }
+
+        .bc1-nav a:hover {
+            color: var(--bc1-accent-color);
+        }
+
+        .bc1-search {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+
+        .bc1-search input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            font-size: 16px;
+            flex: 1;
+            border-radius: 20px;
+        }
+
+        .bc1-search button {
+            background: var(--bc1-button-color);
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        .bc1-search button:hover {
+            background: #e67e00;
+        }
+
+        .bc2-carousel {
+            background: var(--bc2-carousel-bg);
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .bc2-carousel h2 {
+            font-size: 24px;
+            color: var(--bc1-text-color);
+            margin-bottom: 20px;
+        }
+
+        .bc2-carousel-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bc2-carousel-item {
+            background: var(--bc2-carousel-item-bg);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px var(--bc2-carousel-shadow);
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bc2-carousel-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .bc2-carousel-item h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .bc2-carousel-item p {
+            font-size: 14px;
+            color: var(--bc1-text-color);
+        }
+
+        .bc2-carousel-item:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+        }
+
+        .bc3-chamada-servico {
+            background-color: var(--bc3-cor-fundo);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px var(--bc3-sombra);
+            margin-top: 40px;
+        }
+
+        .bc3-chamada-servico h2 {
+            font-size: 28px;
+            color: var(--bc3-cor-texto);
+            margin-bottom: 15px;
+        }
+
+        .bc3-chamada-servico p {
+            font-size: 16px;
+            color: var(--bc3-cor-texto);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .bc3-marketplaces {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .bc3-marketplace {
+            flex: 1;
+            text-align: center;
+        }
+
+        .bc3-marketplace img {
+            max-width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Seção de depoimentos */
+        .bc4-depoimentos {
+            padding: 40px;
+            background-color: var(--bc3-cor-fundo);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .bc4-depoimentos h2 {
+            font-size: 28px;
+            color: var(--bc3-cor-texto);
+            margin-bottom: 20px;
+        }
+
+        .bc4-depoimentos-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .bc4-depoimento {
+            width: 250px;
+            text-align: center;
+            background-color: var(--bc3-cor-principal);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px var(--bc3-sombra);
+        }
+
+        .bc4-depoimento img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .bc4-depoimento p {
+            font-size: 16px;
+            color: var(--bc3-cor-texto);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .bc4-depoimento h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--bc3-cor-acento);
+        }
+
+        @media (max-width: 768px) {
+            .bc4-depoimentos-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .bc1-footer {
+            background-color: var(--bc1-secondary-color);
+            padding: 30px 0;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .bc1-footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .bc1-footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .bc1-footer a:hover {
+            color: var(--bc1-accent-color);
+        }
+
+    </style>
 </head>
-
 <body>
-    <header>
-        
-        <!--bloco da imagem do logo-->
-        <div class="container-logo">
-            <div class="img-logo"><img src="img/sacola feliz.png" alt="imagem do logo do site" loading="lazy" decoding="async"></div>
-            <div class="text-logo"><p>Oferta maneira</p></div>         
+    <header class="bc1-header">
+        <a href="#" class="bc1-logo">BC1 Reviews</a>
+        <nav class="bc1-nav">
+            <a href="#">Início</a>
+            <a href="#">Categorias</a>
+            <a href="#">Melhores Avaliados</a>
+            <a href="#">Contato</a>
+        </nav>
+        <div class="bc1-search">
+            <input type="text" placeholder="Buscar produtos...">
+            <button>🔍</button>
         </div>
-            
-        <!--barra de navegação-->
-        <div class="container-navbar">
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Artigos</li>
-                    <li>Sobre nós</li>
-                </ul>
-            </nav>            
-        </div> 
-
     </header>
-    <main>
 
-        <!--Titulo principal-->
-        <h1>Encontre o produto desejado e confira todos os detalhes antes de comprar</h1>
-
-        <!--sessão da caixa de pesquisa-->                
-        <div class="sessao-caixa-de-pesquisa">
-            <input type="text" placeholder="Digite aqui o produto que deseja encontrar">
-            <button type="submit">
-                <img src="img/icone de pesquisa.png" alt="lupa para iniciar pesquisa" loading="lazy" decoding="async"> 
-            </button>
-        </div>
-
-        <h2>Produtos em destaque</h2>
-        
-        <!--sessão dos produtos em destaque-->
-        <div class="bloco-dos-produtos-em-destaque">
-            <div class="sub-bloco-contendo-as-caixas-123">
-                
-                <!--caixa 1-->
-                <div class="caixa-1">
-                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
-                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
-                </div>
-
-                <!--caixa 2-->
-                <div class="caixa-2">
-                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
-                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
-                </div>
-                
-                <!--caixa 3-->
-                <div class="caixa-3">
-                    <img src="" alt="Imagem mostrando o primeiro produto em destaque" loading="lazy" decoding="async">
-                    <p class="txt1-destaque">Lorem ipsum dolor sit amet.</p>
-                </div>
-
+    <section class="bc2-carousel">
+        <h2>Ofertas em Destaque</h2>
+        <div class="bc2-carousel-container">
+            <div class="bc2-carousel-item">
+                <img src="https://via.placeholder.com/150" alt="Produto 1">
+                <h3>Produto 1</h3>
+                <p>R$ 199,90</p>
+            </div>
+            <div class="bc2-carousel-item">
+                <img src="https://via.placeholder.com/150" alt="Produto 2">
+                <h3>Produto 2</h3>
+                <p>R$ 299,90</p>
+            </div>
+            <div class="bc2-carousel-item">
+                <img src="https://via.placeholder.com/150" alt="Produto 3">
+                <h3>Produto 3</h3>
+                <p>R$ 99,90</p>
             </div>
         </div>
+    </section>
 
-        <h2>Está cansado de ver anúncios que não apresentam as informações básicas de que você precisa?</h2>
-        <p>Aqui, você encontra todas as informações sobre o produto para auxiliá-lo na sua decisão de compra. Descubra produtos selecionados dos maiores marketplaces, com garantia de qualidade e a confiança de vendedores Platinum, Prime e Parceiros Magalu.</p>
-
-        <!--sessão das imagens das empresas-->
-        <div class="bloco-das-imagens-do-ml-amazon-magalu">
-            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
-            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
-            <img class="logo-ml-amz-mglu" src="" alt="logo do mercado livre" loading="lazy" decoding="async">
-        </div>
-
-        <!--sessão de apresentação 1-->
-        <div class="bloco-geral-da-apresentaçao-1">
-
-            <!--bloco do lado esquerdo, contém o texto de apresentação 1-->
-            <div class="bloco-esquerdo-da-apresentaçao-1">
-                <h3 id="titulo-da-apresentaçao-1">Chega de dúvidas</h3>
-                <p id="texto-da-apresentação-1">Chega de produtos sem descrição e vendedores duvidosos! Clique agora e descubra uma nova experiência de compras confiável</p>
-                <a href="" class="botao-conferir-produtos">Conferir produtos</a>
+    <section class="bc3-chamada-servico">
+        <h2>Compre com Segurança e Confiança</h2>
+        <p>Explore as ofertas diretamente nos maiores marketplaces como Mercado Livre, Amazon e Magalu. Compre com a garantia de produtos de qualidade e ofertas especiais!</p>
+        <div class="bc3-marketplaces">
+            <div class="bc3-marketplace">
+                <img src="https://via.placeholder.com/100?text=MercadoLivre" alt="Mercado Livre">
             </div>
-
-            <!--bloco do lado direito que contém a imagem da apresentação 1-->
-            <div class="bloco-direito-da-apresentação-1">
-                <img src="" alt="imagem de uma pessoa que está feliz" loading="lazy" decoding="async">
+            <div class="bc3-marketplace">
+                <img src="https://via.placeholder.com/100?text=Amazon" alt="Amazon">
+            </div>
+            <div class="bc3-marketplace" style="text-align: center;">
+                <img src="https://via.placeholder.com/100?text=Magalu" alt="Magalu">
             </div>
         </div>
-    
+    </section>
 
+    <section class="bc4-depoimentos">
+        <h2>O que nossos clientes dizem</h2>
+        <div class="bc4-depoimentos-container">
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 1">
+                <p>"A experiência de compra foi incrível! Tive todas as minhas dúvidas respondidas e pude confiar na compra, sabendo que estava adquirindo um produto de qualidade."</p>
+                <h4>João Silva</h4>
+            </div>
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 2">
+                <p>"Fiz a compra com total segurança e o produto chegou em perfeito estado. Recomendo a todos que buscam por produtos confiáveis!"</p>
+                <h4>Ana Souza</h4>
+            </div>
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 3">
+                <p>"O site me ajudou a encontrar as melhores ofertas e eu me senti seguro durante todo o processo de compra. Ótimo atendimento!"</p>
+                <h4>Pedro Almeida</h4>
+            </div>
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 4">
+                <p>"Comprei diretamente no Mercado Livre e fiquei muito satisfeito com a segurança do site e a entrega no prazo!"</p>
+                <h4>Lucas Silva</h4>
+            </div>
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 5">
+                <p>"A experiência de compra foi tranquila e o produto veio como esperado, sem surpresas. Aconselho a compra pelo site!"</p>
+                <h4>Mariana Costa</h4>
+            </div>
+            <div class="bc4-depoimento">
+                <img src="https://via.placeholder.com/100" alt="Cliente 6">
+                <p>"Comprei na Amazon e me senti seguro o tempo todo, o site é fácil de usar e as promoções são ótimas!"</p>
+                <h4>José Rocha</h4>
+            </div>
+        </div>
+    </section>
+    <footer class="bc1-footer">
+        <p>&copy; 2025 BC1 Reviews. Todos os direitos reservados. <a href="#">Política de Privacidade</a> | <a href="#">Termos de Serviço</a></p>
+        <div class="bc1-footer-social">
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
 
-        
-
-
-
-
-
-    </main>
-    <script>
-        
-    </script>
 </body>
 </html>
