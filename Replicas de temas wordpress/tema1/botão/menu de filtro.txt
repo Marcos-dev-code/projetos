@@ -1,9 +1,0 @@
-eu tenho a opção de fazer um blco principal com 2 blocos escondidos, mas parece que vai ser dificil fazer com que o bloco principal seja substituido.
-
-opção mais facil:
-
-criar 3 blocos, 2 escondidos;
--quando clicado sobre o bloco exibido, exibe os dois blocos,
--quando clicado em um bloco que não seja o atual, o bloco atual recebe o valor interno do bloco clicado e esconde os blocos abaixo.
-
-então eu tenho que fazer uma modelo tipo modulo que exiba um template com conteudos, e quando eu mudar o valor dos blocos o template continue o mesmo , apenas o conteudo mude, para isso preciso construir um modelo padrão
