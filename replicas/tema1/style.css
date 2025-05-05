@@ -1,0 +1,18 @@
+.box {
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Box */
+    width: 100px;
+    height: 40px;
+
+    /* Visual */
+    border: 1px solid rgba(0, 0, 0, 0.25); /* Borda com transparência para parecer mais fina */
+}
+
+.hidden {
+    /* Layout */
+    display: none;
+}
