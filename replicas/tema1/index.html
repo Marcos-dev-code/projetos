@@ -15,7 +15,7 @@
                 <!--Logo-->
                 <div class="logo"><img src="image/logo/envo-one-logo.png" alt="imagem do logo do site"></div>
 
-                <!--Top bar-->
+                <!--barra de pesquisa-->
                 <div class="search-container">
                     <!-- Top Bar: Popular Searches and Opening Hours -->
                     <div class="top-bar">
@@ -43,20 +43,49 @@
                         </div>
 
                         <div class="box-categories">
-                            <!-- tres elementos com a classe box para se criar uma nodelist-->
+                            <!-- quatro elementos com a classe box para se criar uma nodelist-->
                             <!-- duas classes hidden para eu ocultar/exibir o bloco utilizando javascript-->
-                            <div class="box" onclick="exibirBlocos()">ALL ITEMS</div>
-                            <div id="btn2" class="hidden box">IPHONE</div>
-                            <div id="btn3" class="hidden box">DRONES</div>
+                            <div id="allCategories" class="box">All categories</div>
+                            <div id="devices" class="hidden box">Devices</div>
+                            <div id="drones" class="hidden box">Drones</div>
+                            <div id="technology" class="hidden box">Technology</div>
                         </div>
 
-                        <div class="box-btn-search"></div>
+                        <div class="box-btn-search">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>                          
+
+                        </div>
 
                     </div>
                 </div>
 
                 <!-- Login Section -->
-                <div class="login"></div>
+                <div class="login">
+
+
+                    <!--imagem da pessoa-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user envo-icon la la-user">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">                            
+                        </path><circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+
+                    <!--imagem do carrinho-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart envo-icon la la-shopping-bag">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+
+                    <div class="balao">
+                        <div class="amount-cart hidden-xs">R$&nbsp;0,00</div>
+                    </div>
+
+
+                </div>
             </div>
             <!-- Main Header B: Navigation Menus -->
             <div class="main-header-b">                
@@ -83,7 +112,7 @@
                 </div>
             </div>    
         </header>
-        <script src="script.js"></script>
+        <script src="js/filtroCategorias.js"></script>
     </body>
 
 </html>

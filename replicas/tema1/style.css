@@ -1,6 +1,8 @@
-.box {
+
+.box{
     /* Layout */
-    display: flex;
+    display:flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
 
@@ -12,7 +14,49 @@
     border: 1px solid rgba(0, 0, 0, 0.25); /* Borda com transparência para parecer mais fina */
 }
 
+
 .hidden {
     /* Layout */
     display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilização do balão com preço no header lado direito */
+.balao {
+    position: relative;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 16px 20px;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 300px;
+    margin: 100px auto;
+    font-family: sans-serif;
+  }
+
+  .balao::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Posiciona o triângulo na lateral esquerda */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #f0f0f0; /* Mesma cor do balão */
+  }
