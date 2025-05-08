@@ -10,105 +10,128 @@
     </head>
     <body>
         <header>
-            
-            <div class="main-header-a">
-                <!--Logo-->
-                <div class="logo"><img src="image/logo/envo-one-logo.png" alt="imagem do logo do site"></div>
+            <div class="header-container">  
 
-                <!--barra de pesquisa-->
-                <div class="search-container">
-                    <!-- Top Bar: Popular Searches and Opening Hours -->
-                    <div class="top-bar">
+                <div class="header-a">
+                    <!--Logo-->
+                    <div class="logo"><img src="image/logo/envo-one-logo.png" alt="imagem do logo do site"></div>
 
-                        <div class="top-bar-left">
-                            <p>Popular searches:</p>
-                            <ul>                            
-                                <li><a href="#Drones">Drones</a></li>
-                                <li><a href="#iPhone">iPhone</a></li>
-                                <li><a href="#Watches">Watches</a></li>
+                    <!--barra de pesquisa-->
+                    <div class="search-container">
+                        <!-- Top Bar: Popular Searches and Opening Hours -->
+                        <div class="top-bar">
+
+                            <div class="top-bar-left">
+                                <p>Popular searches:</p>
+                                <ul>                            
+                                    <li><a href="#Drones">Drones</a></li>
+                                    <li><a href="#iPhone">iPhone</a></li>
+                                    <li><a href="#Watches">Watches</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="top-bar-right">
+                                <p>Opening hours: Mo-Fri 9:00-20:00</p>
+                            </div>
+
+                        </div>
+
+                        <!-- Search Box contendo os seguintes blocos: box-input, box-categories, box-btn-search. -->
+                        <div class="search-box">
+                            
+                            <div class="box-imput">
+                                <input type="search" name="search" id="search-box" placeholder="Search Products..." aria-label="Search through the site" autocomplete="on" maxlength="100" required>
+                            </div>
+
+                            <div class="box-categories">
+                                <!-- quatro elementos com a classe box para se criar uma nodelist-->
+                                <!-- duas classes hidden para eu ocultar/exibir o bloco utilizando javascript-->
+                                <div id="allCategories" class="box">All categories</div>
+                                <div id="devices" class="hidden-filter box">Devices</div>
+                                <div id="drones" class="hidden-filter box">Drones</div>
+                                <div id="technology" class="hidden-filter box">Technology</div>
+                            </div>
+
+                            <div class="box-btn-search">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" aria-hidden="true">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>                          
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Login Section -->
+                    <div class="login">
+
+
+                        <!--imagem da pessoa-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user envo-icon la la-user">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">                            
+                            </path><circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+
+                        <!--imagem do carrinho-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart envo-icon la la-shopping-bag">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+
+                        <div class="balao">
+                            <div class="amount-cart hidden-xs">R$&nbsp;0,00</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Main Header B: Navigation Menus -->
+                <div class="header-b">                
+                    <!-- Primary Navigation -->
+                    <div class="navigation-a">
+                        <nav>
+                            <ul>
+                                <li><a href="#home">HOME</a></li>
+
+                                <li><a href="#shop">SHOP </a>
+                                        <ul>
+                                            <li>My account</li>
+                                            <li>Checkout</li>
+                                            <li>Cart</li>
+                                        </ul>
+                               </li>
+
+                                <li><a href="#about-us">ABOUT US</a>
+                                        <ul>
+                                            <li>Contatc</li>
+                                        </ul>
+                                </li>
+
+                                <li><a href="#blog">BLOG</a></li>
+                                <li><a href="#products">PRODUCTS</a>
+                                    <ul>
+                                        <li>Single Product</li>
+                                        <li>Variable Product</li>
+                                        <li>Grouped Product</li>
+                                        <li>Sale Product</li>
+                                        <li>External Product</li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </div>
-
-                        <div class="top-bar-right">
-                            <p>Opening hours: Mo-Fri 9:00-20:00</p>
-                        </div>
-
+                        </nav>
                     </div>
-
-                    <!-- Search Box contendo os seguintes blocos: box-input, box-categories, box-btn-search. -->
-                    <div class="search-box">
-                        
-                        <div class="box-imput">
-                            <input type="search" name="search" id="search-box" placeholder="Search Products..." aria-label="Search through the site" autocomplete="on" maxlength="100" required>
-                        </div>
-
-                        <div class="box-categories">
-                            <!-- quatro elementos com a classe box para se criar uma nodelist-->
-                            <!-- duas classes hidden para eu ocultar/exibir o bloco utilizando javascript-->
-                            <div id="allCategories" class="box">All categories</div>
-                            <div id="devices" class="hidden box">Devices</div>
-                            <div id="drones" class="hidden box">Drones</div>
-                            <div id="technology" class="hidden box">Technology</div>
-                        </div>
-
-                        <div class="box-btn-search">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search" aria-hidden="true">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>                          
-
-                        </div>
-
+                    <!-- Secondary Navigation -->
+                    <div class="navigation-b">
+                        <nav>
+                            <ul>
+                                <li><a href="#season-sale">SEASON SALE</a></li>
+                                <li><a href="#black-friday">BLACK FRIDAY</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                </div>
-
-                <!-- Login Section -->
-                <div class="login">
-
-
-                    <!--imagem da pessoa-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user envo-icon la la-user">
-                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2">                            
-                        </path><circle cx="12" cy="7" r="4"></circle>
-                    </svg>
-
-                    <!--imagem do carrinho-->
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart envo-icon la la-shopping-bag">
-                        <circle cx="9" cy="21" r="1"></circle>
-                        <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-
-                    <div class="balao">
-                        <div class="amount-cart hidden-xs">R$&nbsp;0,00</div>
-                    </div>
-
-
-                </div>
-            </div>
-            <!-- Main Header B: Navigation Menus -->
-            <div class="main-header-b">                
-                <!-- Primary Navigation -->
-                <div class="navigation-a">
-                    <nav>
-                        <ul>
-                            <li><a href="#home">HOME</a></li>
-                            <li><a href="#shop">SHOP</a></li>
-                            <li><a href="#about-us">ABOUT US</a></li>
-                            <li><a href="#blog">BLOG</a></li>
-                            <li><a href="#products">PRODUCTS</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- Secondary Navigation -->
-                <div class="navigation-b">
-                    <nav>
-                        <ul>
-                            <li><a href="#season-sale">SEASON SALE</a></li>
-                            <li><a href="#black-friday">BLACK FRIDAY</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>    
         </header>
@@ -117,3 +140,4 @@
 
 </html>
 
+<!--Parei no segundo menu b  para adicionar os submenus e depois adicionar as classes e oculta-las no javascript-->

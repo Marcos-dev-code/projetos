@@ -7,16 +7,16 @@ const technology =document.querySelector("#technology")
 
 //função reutilizável para esconder o filtro
 function esconderFiltro(){
-    devices.classList.add("hidden")
-    drones.classList.add("hidden")
-    technology.classList.add("hidden")
+    devices.classList.add("hidden-filter")
+    drones.classList.add("hidden-filter")
+    technology.classList.add("hidden-filter")
 }
 
 //remove a classe hidden para outros filtros serem exibidos 
 allCategories.addEventListener("click",()=>{
-    devices.classList.remove("hidden")
-    drones.classList.remove("hidden")
-    technology.classList.remove("hidden")
+    devices.classList.remove("hidden-filter")
+    drones.classList.remove("hidden-filter")
+    technology.classList.remove("hidden-filter")
 })
 
 //fecha os filtros e altera para ao filtro : device

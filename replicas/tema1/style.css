@@ -1,62 +1,220 @@
+/*reset global dos navegadores*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong,
+sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
+caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, footer,
+figcaption, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    font:inherit;
+    text-decoration: none;
+    vertical-align:baseline;
+}
 
-.box{
-    /* Layout */
+
+.header-container{
+  width:100%;  
+}
+
+
+  .header-a{
+    display:flex; 
+    height: 70px; 
+    border: 2px red solid; /*marcação de escopo*/
+  }
+
+
+    .logo{
+      width:25%;    
+    }
+
+    
+    .search-container{
+      width:50%;
+    }
+
+
+      /*Bloco top bar acima da barra search*/
+      .top-bar{
+        display:flex;
+      }
+
+
+        .top-bar-right{
+          width:50%
+        }
+
+
+        .top-bar-left{
+          display:flex;
+          width:50%
+        }
+
+
+        .top-bar-left ul{
+          display:flex;
+          width:60%;
+          list-style-type: none;
+          padding-left:0;
+        }
+
+
+        .top-bar-left ul li{
+        width:60%
+        }
+
+
+        .top-bar-left p{
+          width:40%
+        }
+
+
+      .search-box{
+        display:flex;
+      }
+
+
+        .box-imput{
+          width:50%
+        }
+
+        .box-categories{
+          width:30%
+        }
+
+
+          /* propriedades do filtro superior */
+          .box{
+            display:flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.25); /* Borda com transparência para parecer mais fina */
+          }
+
+
+          .hidden-filter {      
+            display: none;
+          }
+
+
+        /* Botão com uma lupa em search */
+        .box-btn-search{
+          width:20%
+        }
+
+
+    .login{
+      display:flex;
+      width:25%; 
+    }
+
+
+      /* Estilização do balão com preço no header lado direito */
+      .balao {
+        position: relative;
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 16px 20px;
+        border-radius: 8px;
+        width: fit-content;
+        max-width:relative;
+        margin: auto;
+        font-family: sans-serif;
+      }
+
+      .balao::before {
+        content: "";
+        position: absolute;
+        left: -10px; /* Posiciona o triângulo na lateral esquerda */
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #f0f0f0; /* Mesma cor do balão */
+      }
+  
+
+  .header-b{
+    max-width: 100%;
+    height:100px;
     display:flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-
-    /* Box */
-    width: 100px;
-    height: 40px;
-
-    /* Visual */
-    border: 1px solid rgba(0, 0, 0, 0.25); /* Borda com transparência para parecer mais fina */
-}
-
-
-.hidden {
-    /* Layout */
-    display: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilização do balão com preço no header lado direito */
-.balao {
-    position: relative;
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 16px 20px;
-    border-radius: 8px;
-    width: fit-content;
-    max-width: 300px;
-    margin: 100px auto;
-    font-family: sans-serif;
+    border: 2px red solid; /*marcação de escopo*/
   }
 
-  .balao::before {
-    content: "";
-    position: absolute;
-    left: -10px; /* Posiciona o triângulo na lateral esquerda */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #f0f0f0; /* Mesma cor do balão */
-  }
+
+    .navigation-a{
+      width:70%;
+    }
+
+    .navigation-a nav ul li{
+      margin-left:30px;
+    }
+
+
+      .navigation-a nav ul{
+        display:flex;
+        list-style-type: none;
+        color:inherit;
+        width:50px;
+
+      }
+
+
+      .navigation-b{
+        width:30%
+      }
+
+
+      .navigation-b nav ul {
+        display:flex;
+        list-style-type:none;
+      }
+
+
+        .navigation-b nav ul li a{
+          margin-left:30px; 
+          color:inherit
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
